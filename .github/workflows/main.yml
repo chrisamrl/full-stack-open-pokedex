@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - master # Changing the branch here would also work
 
 jobs:
   build:
@@ -15,3 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "enigmatic-wave-45349" #Must be unique in Heroku
           heroku_email: "amrielsusanto@gmail.com"
+          healthcheck: "https://enigmatic-wave-45349.herokuapp.com/health"
